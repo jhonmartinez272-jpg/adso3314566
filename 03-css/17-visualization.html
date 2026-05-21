@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-Visualization</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            border: 2px solid #ccc;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        /* BOX GENERAL */
+        .box {
+            width: 120px;
+            height: 60px;
+            background: rgb(61, 10, 144);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        /* DISPLAY */
+        .block { background: rgb(52, 21, 99); }
+        .inline { background: rgb(39, 22, 110); }
+        .none { display: none; }
+        .flex { background: rgb(103, 87, 125); }
+        .grid { background: rgb(93, 48, 127); }
+
+        /* VISIBILITY */
+        .hidden { visibility: hidden; }
+        .visible { visibility: visible; }
+
+        /* OVERFLOW DEMO (como imagen que enviaste) */
+        .overflow-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .overflow-box {
+            width: 160px;
+            height: 160px;
+            border: 2px solid #444;
+            padding: 8px;
+            overflow: hidden;
+            font-size: 14px;
+        }
+
+        .overflow-scroll {
+            overflow: scroll;
+        }
+
+        .overflow-auto {
+            overflow: auto;
+        }
+
+        /* Z-INDEX */
+        .z-container {
+            height: 320px; /* 👈 SOLO CAMBIO NECESARIO */
+            position: relative;
+        }
+
+        .z1 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgb(104, 71, 135);
+            z-index: 1;
+        }
+
+        .z2 {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            background: rgb(80, 21, 175);
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+     <a href="/03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+            </path>
+        </svg>
+    </a>
+
+<main>
+
+    <header>
+        <h1>17-Visualization</h1>
+        <h2>
+            Display | Visibility | Overflow | Z-Index
+        </h2>
+    </header>
+
+    <!-- DISPLAY -->
+    <section>
+        <h2>Display</h2>
+
+        <div style="display:flex; gap:60px; flex-wrap:wrap;">
+
+            <div>
+                <p><strong>5 = display: none</strong></p>
+
+                <div style="display:grid; grid-template-columns: repeat(3, 50px); gap:10px;">
+                    <div class="box" style="width:50px;height:50px;">1</div>
+                    <div class="box" style="width:50px;height:50px;">2</div>
+                    <div class="box" style="width:50px;height:50px;">3</div>
+
+                    <div class="box" style="width:50px;height:50px;">4</div>
+
+                    <div class="box none" style="width:50px;height:50px;">5</div>
+
+                    <div class="box" style="width:50px;height:50px;">6</div>
+
+                    <div class="box" style="width:50px;height:50px;">7</div>
+                    <div class="box" style="width:50px;height:50px;">8</div>
+                    <div class="box" style="width:50px;height:50px;">9</div>
+                </div>
+            </div>
+
+            <div>
+                <p><strong>5 = visibility: hidden</strong></p>
+
+                <div style="display:grid; grid-template-columns: repeat(3, 50px); gap:10px;">
+                    <div class="box" style="width:50px;height:50px;">1</div>
+                    <div class="box" style="width:50px;height:50px;">2</div>
+                    <div class="box" style="width:50px;height:50px;">3</div>
+
+                    <div class="box" style="width:50px;height:50px;">4</div>
+
+                    <div class="box hidden" style="width:50px;height:50px;">5</div>
+
+                    <div class="box" style="width:50px;height:50px;">6</div>
+
+                    <div class="box" style="width:50px;height:50px;">7</div>
+                    <div class="box" style="width:50px;height:50px;">8</div>
+                    <div class="box" style="width:50px;height:50px;">9</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VISIBILITY -->
+    <!-- VISIBILITY -->
+<section>
+    <h2>Visibility</h2>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:start;">
+
+        <!-- VISIBLE -->
+        <div>
+            <p><strong>Visible</strong></p>
+            <div class="box visible">Visible</div>
+        </div>
+
+        <!-- HIDDEN -->
+        <div>
+            <p><strong>Hidden</strong></p>
+            <div class="box hidden">Hidden</div>
+        </div>
+
+    </div>
+
+    <p>👉 Visibility: hidden mantiene el espacio, pero no se ve el contenido.</p>
+</section>
+
+    <!-- OVERFLOW -->
+    <section>
+        <h2>Overflow</h2>
+
+        <div class="overflow-container">
+
+            <div class="overflow-box">
+                <strong>overflow: visible</strong>
+                <p>
+                    lorem ipsum dolor sit amet, consectetur adipisicing elit. Cras vitae dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+
+            <div class="overflow-box">
+                <strong>overflow: hidden</strong>
+                <p>
+                    lorem ipsum dolor sit amet, consectetur adipisicing elit. Cras vitae dolor.
+                </p>
+            </div>
+
+            <div class="overflow-box overflow-scroll">
+                <strong>overflow: scroll</strong>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis adipisci quo unde cupiditate impedit, quia, consequuntur dicta ad perferendis totam sunt? Odit quas, deserunt placeat quae eum ipsum ut vero.
+                    Molestias mollitia, reiciendis hic in amet sed neque voluptas autem earum qui explicabo, animi laudantium tempore inventore aliquid id eligendi. Incidunt debitis quasi, molestiae nulla optio vero fugit laudantium iure.
+                    Nulla vitae quidem sit ex officiis vel repellendus perspiciatis nesciunt, quo accusamus! Nesciunt eum, alias praesentium incidunt aperiam numquam beatae accusamus aliquid consequuntur sit eligendi pariatur ducimus laboriosam? Velit, earum?
+                    Pariatur, asperiores amet. Commodi, quisquam obcaecati, ipsa nam ut voluptas aspernatur, suscipit voluptate tenetur consectetur similique cum explicabo optio illo eligendi consequatur odio repellat quasi architecto nulla. Vel, et voluptatum.
+                    Saepe fugit maxime architecto, voluptatem odit quae totam praesentium nihil animi quam at accusamus adipisci quas. Explicabo, nam aut vel ipsam necessitatibus dignissimos. Perferendis sapiente voluptatem ut facere dolor quod.
+                    Laborum maiores, ipsa optio quo quae delectus beatae numquam aspernatur praesentium. Consequatur, autem! Doloribus debitis illo hic fugit dignissimos incidunt accusamus esse quisquam, sed eius, suscipit, eligendi reprehenderit minima sapiente?
+                    Dolores facere nisi corporis! Nam, voluptatem iste obcaecati saepe incidunt, quibusdam ipsum laborum dicta minus suscipit beatae voluptate qui, ab earum quae error eaque sit in accusamus necessitatibus ea voluptas.
+                    Eum molestias velit sed similique, doloribus ullam debitis fugit soluta adipisci iste quos sint. Cupiditate accusantium tenetur, dolores minus quo velit dignissimos asperiores maiores obcaecati quam vitae explicabo, recusandae omnis?
+                    Dolor, libero hic itaque aspernatur natus ad illo vitae, beatae deserunt porro incidunt assumenda error cumque rerum asperiores maxime tenetur inventore aut quas? Excepturi dolorum maxime dignissimos ipsam sed ipsum.
+                    Nemo, consectetur dolores, in quasi eum maiores assumenda ullam illum enim unde sint, doloribus dolorem rem minima corporis aspernatur rerum earum laudantium? Amet quisquam est eaque aperiam, ullam fugit ducimus.
+                    Nam, voluptas eligendi error tempora perferendis omnis ut atque accusantium quasi dolore eveniet corporis fuga placeat ad similique praesentium officia inventore culpa dicta nobis aut est fugiat. Laboriosam, sed delectus.
+                    Nemo, doloribus illo quam omnis ducimus ut a ea, vitae libero at reiciendis facere voluptatum recusandae quas cupiditate enim laudantium voluptate perferendis totam voluptatem eum dicta iusto tempore? Laboriosam, sequi.
+                    Delectus molestias, beatae enim voluptate id magnam laboriosam libero? Corporis ipsa dolorum at, esse, numquam vitae porro voluptatem natus dolor asperiores unde omnis quis rerum modi, rem aspernatur eaque officiis.
+                    Provident amet nam voluptas obcaecati incidunt. Maxime cum quasi minima aspernatur voluptatibus totam laborum excepturi magni dolorum officia molestiae laboriosam magnam, adipisci sint nulla earum alias quaerat et id numquam!
+                    Ipsum distinctio eos consequatur ab non vel aspernatur labore veniam similique expedita facilis, ullam commodi officiis odit eligendi ut rerum fuga obcaecati fugiat aliquam quos porro! Delectus alias eum nemo?
+                    Hic quod nihil, odio earum voluptate voluptatibus dicta alias repellendus qui adipisci optio quaerat! Vero unde ad deleniti beatae eaque possimus at odit totam officiis enim, molestiae pariatur quo nemo.
+                    Veritatis ad, ea inventore deserunt hic quisquam eveniet saepe alias architecto, praesentium possimus dolore fuga nostrum minima illo similique necessitatibus, aspernatur quia quo vitae itaque consequatur fugiat molestiae optio! Dolorum!
+                    Quibusdam, error harum alias ad aperiam delectus fuga assumenda obcaecati eligendi odit quasi sapiente, quaerat ipsam distinctio aut esse! Quidem quae hic, soluta delectus officia distinctio alias repudiandae nihil minima?
+                    Ducimus quis vero tenetur? Iure corrupti quos ipsum recusandae natus eveniet, perspiciatis aut impedit ullam cupiditate. Qui nihil laborum, impedit soluta recusandae, esse fugiat et eum rem nisi magni perspiciatis.
+                    Fugit accusamus odit facere enim minus expedita aspernatur voluptatibus dicta architecto id aut, in unde esse ex rem, dolor, dolores vel itaque totam deserunt? Doloremque eligendi perferendis ab libero dolor.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Z-INDEX -->
+    <section class="z-container">
+        <h2>Z-Index</h2>
+
+        <div style="position: relative; height: 200px; margin-top: 20px;">
+
+            <div class="box z1" style="
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                z-index: 1;
+                width: 120px;
+                height: 120px;
+                background: rgb(104, 71, 135);
+            ">
+                Caja 1
+            </div>
+
+            <div class="box z2" style="
+                position: absolute;
+                top: 60px;
+                left: 80px;
+                z-index: 2;
+                width: 120px;
+                height: 120px;
+                background: rgb(80, 21, 175);
+            ">
+                Caja 2
+            </div>
+
+            <div class="box" style="
+                position: absolute;
+                top: 90px;
+                left: 130px;
+                z-index: 3;
+                width: 120px;
+                height: 120px;
+                background: rgb(40, 10, 90);
+            ">
+                Caja 3
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+</body>
+
+</html>

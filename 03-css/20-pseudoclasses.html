@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-CSS</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+
+    <style>
+        section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ffffff;
+        }
+
+        /* LINKS */
+        .link-demo:link {
+            color: rgb(247, 247, 251);
+        }
+
+        .link-demo:visited {
+            color: rgb(182, 177, 188);
+        }
+
+        /* ACTIVE */
+        .active-demo {
+            padding: 10px;
+            background: rgb(34, 6, 133);
+            color: rgb(255, 255, 255);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .active-demo:active {
+            background: rgb(82, 58, 133);
+            transform: scale(0.95);
+        }
+
+        /* HOVER */
+        .hover-demo {
+            padding: 10px;
+            background: rgb(58, 10, 135);
+        }
+
+        .hover-demo:hover {
+            background: rgb(38, 11, 84);
+            color: rgb(255, 255, 255);
+        }
+
+        /* FOCUS */
+        .focus-demo {
+            padding: 10px;
+            border: 2px solid rgb(57, 56, 56);
+        }
+
+        .focus-demo:focus {
+            border: 2px solid rgb(43, 16, 81);
+            background: #5c5895;
+            outline: none;
+        }
+
+        /* FIRST LETTER */
+        .first-letter-demo::first-letter {
+            font-size: 40px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        /* FIRST LINE */
+        .first-line-demo::first-line {
+            color: rgb(38, 5, 108);
+            font-weight: bold;
+        }
+
+        /* FIRST CHILD */
+        .first-child-demo p:first-child {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* BEFORE */
+        .before-demo::before {
+            content: "🔥 ";
+            color: orange;
+        }
+
+        /* AFTER */
+        .after-demo::after {
+            content: " ✔";
+            color: rgb(42, 4, 102);
+        }
+
+        /* LANG */
+        .lang-demo:lang(it) {
+            color: rgb(37, 8, 98);
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/03-css/index.html" class="btn-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path
+                d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z">
+            </path>
+        </svg>
+    </a>
+
+    <main>
+
+        <header>
+            <h1>20-Pseudo-classes</h1>
+            <h2>Is used to define a special state of an element.</h2>
+        </header>
+
+        <!-- LINK -->
+        <section>
+            <h2>:link / :visited</h2>
+            <a href="https://example.com" target="_blank" class="link-demo">Unvisited Link</a>
+            <a href="https://google.com" target="_blank" class="link-demo">Visited Link</a>
+        </section>
+
+        <!-- ACTIVE -->
+        <section>
+            <h2>:active</h2>
+            <a href="#" class="active-demo">Hold click me</a>
+        </section>
+
+        <!-- HOVER -->
+        <section>
+            <h2>:hover</h2>
+            <p class="hover-demo">Pasa el mouse por encima de este texto</p>
+        </section>
+
+        <!-- FOCUS -->
+        <section>
+            <h2>:focus</h2>
+            <input type="text" class="focus-demo" placeholder="Haz click aquí">
+        </section>
+
+        <!-- FIRST LETTER -->
+        <section>
+            <h2>:first-letter</h2>
+            <p class="first-letter-demo">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+        </section>
+
+        <!-- FIRST LINE -->
+        <section>
+            <h2>:first-line</h2>
+            <p class="first-line-demo">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan tortor. Integer
+                feugiat nisl sed turpis tincidunt nec volutpat odio gravida.
+            </p>
+        </section>
+
+        <!-- FIRST CHILD -->
+        <section class="first-child-demo">
+            <h2>:first-child</h2>
+            <p>Este es el primer hijo (rojo)</p>
+            <p>Segundo párrafo</p>
+            <p>Tercer párrafo</p>
+        </section>
+
+        <!-- BEFORE -->
+        <section>
+            <h2>:before</h2>
+            <p class="before-demo">Texto con before</p>
+        </section>
+
+        <!-- AFTER -->
+        <section>
+            <h2>:after</h2>
+            <p class="after-demo">Texto con after</p>
+        </section>
+
+        <!-- LANG -->
+        <section>
+            <h2>:lang()</h2>
+            <p lang="it" class="lang-demo">Questo è un testo in italiano</p>
+            <p lang="en" class="lang-demo">This is an English text</p>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
