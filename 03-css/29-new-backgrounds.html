@@ -7,6 +7,117 @@
     <title>03-CSS</title>
     <link rel="stylesheet" href="../src/css/03-css.css">
 </head>
+<style>
+    h3 {
+        color: beige;
+    }
+
+    .bg {
+        width: 320px;
+        height: 450px;
+        background-image: url(imgs/bg2.png), url(imgs/bg3.png), url(imgs/bg1.png);
+        background-position: center, center;
+        margin: 0 auto;
+    }
+
+    .linear{
+        width: 320px;
+        height: 250px;
+        background: linear-gradient(to right, rgb(85, 28, 192), rgb(54, 4, 13));
+        margin: 0 auto;
+    }
+
+    .linear2{
+        width: 320px;
+        height: 250px;
+        background: linear-gradient(rgb(41, 26, 26), blue);
+        margin: 0 auto;
+    }
+
+    .col{
+        width: 320px;
+        height: 250px;
+        background: linear-gradient(rgb(233, 233, 19) 0 50%, blue 50% 80%, red 80% 100%);
+        margin: 0 auto;
+    }
+
+    .ver{
+        width: 320px;
+        height: 250px;
+        background: linear-gradient(to right, rgb(0, 0, 0) 50%, rgb(255, 255, 255) 50%) ;
+        background-size: 59px;
+        margin: 0 auto;
+    }
+
+    .gradi{
+        width: 320px;
+        height: 250px;
+        background: radial-gradient(rgb(36, 36, 94), rgb(147, 129, 224));
+        margin: 0 auto;
+        
+    }
+
+    .bull{
+        width: 320px;
+        height: 250px;
+        background: radial-gradient(circle, rgb(255, 255, 255) 20%,
+        black 20%,
+        black 40%,
+        rgb(255, 255, 255)40%,
+        #fff 60%,
+        black 60%,
+        black 80%,
+        #fff 80% );
+        margin: 0 auto;
+
+    }
+
+    .conic{
+        width: 320px;
+        height: 250px;
+        margin: auto;
+        background: conic-gradient(red, rgb(117, 117, 28), rgb(38, 38, 146),orange, rgb(51, 133, 172), rgb(216, 50, 50));
+    }
+
+    .clip{
+        font-size: 100px;
+        background: linear-gradient(45deg,  white 0%, rgb(0, 0, 0) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+    .clip2{
+        font-size: 100px;
+        background:url(imgs/bgfire.jpg) no-repeat center;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+    .mask {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(to top, red, yellow);
+    margin: 2rem auto;
+
+    mask-image: url("imgs/apple-logo.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain; 
+    
+    
+    -webkit-mask-image: url("imgs/apple-logo.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+}
+
+
+
+</style>
 
 <body>
     <a href="/03-css/index.html" class="btn-home">
@@ -20,7 +131,52 @@
         <header>
             <h1>29-New-Backgrounds</h1>
             <h2>New Features (multiple, gradients, clip).
-
-
             </h2>
         </header>
+
+        <section>
+            
+            <h3>Backgrounds multiple images</h3> <br>
+            <div class="bg"></div>
+            <br>
+            <h3>Linear Gradient (Color1 and color2)</h3>
+            <br>
+            <div class="linear"></div>
+            <br>
+            <div class="linear2"></div>
+            <br>
+            <h3>Colombia Flag</h3>
+            <br>
+            <div class="col"></div>
+            <br>
+            <h3>Vertical Lines</h3>
+            <br>
+            <div class="ver"></div>
+            <br>
+            <h3>Radial Gradient</h3>
+            <br>
+            <div class="gradi"></div>
+            <br>
+            <h3>BullsEye</h3>
+            <br>
+            <div class="bull"></div>
+            <br>
+            <h3>Conic Gradient</h3>
+            <br>
+            <div class="conic"></div>
+            <br>
+            <h3>Bgs Clip</h3>
+            <br>
+            <div class="clip">ADSO</div>
+            <br>
+            <div class="clip2">FIRE</div>
+            <br>
+            <h3>Bgs Mask</h3>
+            <br>
+            <div class="mask"></div>
+            <br>
+            
+            
+
+        </section> 
+        
