@@ -483,5 +483,390 @@
       "El baloncesto no construye el carácter, lo revela." — James Naismith
     </div>
   </main>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEYENDAS DE LA NBA - Media Queries</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Federant&family=Lobster&family=Playwrite+CU+Guides&family=Roboto:ital,wdth,wght@0,99.7,300;1,99.7,300&display=swap');
+        
+        * {
+            transition: all 0.5s ease-in;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #4f5052 0%, #0a1a3a 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        main {
+            padding: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        header figure.logo {
+            background: url(./imgs/NBA01.png) no-repeat center;
+            background-size: contain;
+            height: 120px;
+            margin: 0 auto 1rem;
+            width: 200px;
+        }
+        
+        header h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        header h1 span {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        .nba-title {
+            color: #FDB927;
+        }
+        
+        .players-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .player-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 2px solid rgba(253, 185, 39, 0.2);
+            transition: all 0.5s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .player-card:hover {
+            transform: translateY(-10px);
+            border-color: #ffbe30;
+            box-shadow: 0 20px 40px rgba(253, 185, 39, 0.2);
+        }
+        
+        .player-image {
+            width: 100%;
+            padding-bottom: 100%;
+            position: relative;
+            margin: 0 auto 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid rgba(253, 185, 39, 0.3);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .player-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .player-name {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            color: #FDB927;
+            margin-bottom: 0.5rem;
+        }
+        
+        .player-number {
+            display: inline-block;
+            background: #FDB927;
+            color: #000000;
+            font-weight: bold;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+            align-self: center;
+        }
+        
+        .player-bio {
+            text-align: justify;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            flex-grow: 1;
+        }
+        
+        .player-bio strong {
+            color: #FDB927;
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 4rem 0 2rem;
+            font-family: 'Archivo Black', sans-serif;
+            color: #FDB927;
+            text-shadow: 0 0 20px rgba(253, 185, 39, 0.3);
+        }
+        
+        .media-info {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+        
+        .media-info span {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            background: rgba(253, 185, 39, 0.1);
+            border: 1px solid rgba(253, 185, 39, 0.2);
+        }
+        
+        .media-info span.lg, .media-info span.md, .media-info span.sm {
+            display: none;
+        }
+        
+        .media-info span.lg {
+            display: inline-block;
+        }
+        
+        .footer-text {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            border-top: 2px solid rgba(253, 185, 39, 0.2);
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ----- BOTÓN BACK TO INDEX (NUEVO) ----- */
+        .back-btn-wrapper {
+            text-align: center;
+            margin: 2rem 0 1rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: rgba(253, 185, 39, 0.15);
+            backdrop-filter: blur(4px);
+            border: 2px solid #FDB927;
+            color: #FDB927;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(253, 185, 39, 0.2);
+        }
+
+        .back-btn:hover {
+            background: #FDB927;
+            color: #0a1a3a;
+            box-shadow: 0 0 35px rgba(253, 185, 39, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* Break Points */
+        @media (max-width: 1024px) {
+            body main {
+                padding: 2rem;
+            }
+            
+            .players-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            header figure.logo {
+                width: 150px;
+                height: 90px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            section h2 {
+                font-size: 2.5rem;
+            }
+            
+            .media-info span.lg {
+                display: none;
+            }
+            
+            .media-info span.md {
+                display: inline-block;
+            }
+            
+            .player-image {
+                padding-bottom: 75%;
+            }
+        }
+        
+        @media (max-width: 728px) {
+            body main {
+                padding: 1rem;
+            }
+            
+            .players-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                max-width: 500px;
+                margin: 2rem auto;
+            }
+            
+            header figure.logo {
+                width: 120px;
+                height: 70px;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header h1 span {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            section h2 {
+                font-size: 2rem;
+            }
+            
+            .player-image {
+                padding-bottom: 80%;
+                max-height: 350px;
+            }
+            
+            .player-name {
+                font-size: 1.8rem;
+            }
+            
+            .player-bio {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+            
+            .media-info {
+                padding: 1rem;
+            }
+            
+            .media-info span {
+                display: block !important;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+            
+            .media-info span.lg, .media-info span.md {
+                display: none !important;
+            }
+            
+            .media-info span.sm {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <figure class="logo"></figure>
+            <h1>
+                <span class="nba-title">NBA</span>
+                <span>LEGENDS</span>
+            </h1>
+        </header>
+        
+        <section>
+            <h2>ICONOS DE BASKETBALL</h2>
+            
+            <div class="players-grid">
+                <!-- MICHAEL JORDAN -->
+                <div class="player-card">
+                    <div class="player-image">
+                        <img src="./imgs/MICHAEL_JORDAN.png" alt="Michael Jordan">
+                    </div>
+                    <div class="player-number">#23</div>
+                    <h3 class="player-name">MICHAEL JORDAN</h3>
+                    <p class="player-bio">
+                        <strong>Michael Jeffrey Jordan</strong> (nacido el 17 de febrero de 1963) es considerado el mejor jugador de baloncesto de todos los tiempos. Ganó <strong>6 campeonatos</strong> con los Chicago Bulls, 5 MVP de la temporada regular y 6 MVP de las Finales. Su legado trasciende el deporte, convirtiéndose en un ícono global y el dueño del equipo Charlotte Hornets. Conocido como "Air Jordan", revolucionó el juego con su atletismo y competitividad.
+                    </p>
+                </div>
+                
+                <!-- KOBE BRYANT -->
+                <div class="player-card">
+                    <div class="player-image">
+                        <img src="./imgs/KOBE.png" alt="Kobe Bryant">
+                    </div>
+                    <div class="player-number">#24</div>
+                    <h3 class="player-name">KOBE BRYANT</h3>
+                    <p class="player-bio">
+                        <strong>Kobe Bean Bryant</strong> (23 de agosto de 1978 - 26 de enero de 2020) fue una leyenda de Los Angeles Lakers durante <strong>20 temporadas</strong>. Ganó <strong>5 campeonatos</strong>, 2 MVP de las Finales y 1 MVP de la temporada regular. Apodado "Black Mamba", era conocido por su ética de trabajo implacable y su habilidad para anotar. Es el tercer máximo anotador en la historia de la NBA y dejó un legado imborrable.
+                    </p>
+                </div>
+                
+                <!-- LEBRON JAMES -->
+                <div class="player-card">
+                    <div class="player-image">
+                        <img src="./imgs/LEBRON.png" alt="LeBron James">
+                    </div>
+                    <div class="player-number">#23</div>
+                    <h3 class="player-name">LEBRON JAMES</h3>
+                    <p class="player-bio">
+                        <strong>LeBron Raymone James</strong> (nacido el 30 de diciembre de 1984) es uno de los jugadores más dominantes de la historia. Con <strong>4 campeonatos</strong>, 4 MVP de la temporada regular y 4 MVP de las Finales, ha llevado a tres equipos diferentes al título. Apodado "King James", es el máximo anotador histórico de la NBA y continúa rompiendo récords en su temporada número 22.
+                    </p>
+                </div>
+                
+                <!-- STEPHEN CURRY -->
+                <div class="player-card">
+                    <div class="player-image">
+                        <img src="./imgs/CURRY.png" alt="Stephen Curry">
+                    </div>
+                    <div class="player-number">#30</div>
+                    <h3 class="player-name">STEPHEN CURRY</h3>
+                    <p class="player-bio">
+                        <strong>Wardell Stephen Curry II</strong> (nacido el 14 de marzo de 1988) revolucionó el baloncesto con su tiro de larga distancia. Ganó <strong>4 campeonatos</strong> con Golden State Warriors, 2 MVP de la temporada regular (incluyendo el primer MVP unánime) y 1 MVP de las Finales. Es el máximo anotador de triples de la historia y ha cambiado la forma de jugar al baloncesto moderno.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- BOTÓN BACK TO INDEX (SOLO UN BOTÓN) -->
+        <div class="back-btn-wrapper">
+            <a href="index.html" class="back-btn">regresa al CSS </a>
+        </div>
+
+        <div class="footer-text">
+            "El baloncesto no construye el carácter, lo revela." - James Naismith
+        </div>
+    </main>
+
 </body>
 </html>
