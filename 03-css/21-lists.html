@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-CSS </title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+</head>
+<style>
+    h3 {
+        color: rgb(181, 173, 189);
+    }
+</style>
+
+<body>
+
+    <a href="/03-css/index.html" class="btn-home" aria-label="Back to home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+        </svg>
+    </a>
+
+    <main>
+        <header>
+            <h1>21 — Lists</h1>
+            <p>Allows you to set all the list style properties at once.</p>
+        </header>
+
+        <section class="lists-container">
+            <!-- List Style Type -->
+            <article>
+                <h3>list-style-type</h3>
+                <div class="demo-group">
+                    <ul class="disc">
+                        <li>Disc item</li>
+                        <li>Disc item</li>
+                    </ul>
+                    <ul class="square">
+                        <li>Square item</li>
+                        <li>Square item</li>
+                    </ul>
+                    <ol class="roman">
+                        <li>Roman item</li>
+                        <li>Roman item</li>
+                    </ol>
+                </div>
+            </article>
+
+            <!-- List Style Position -->
+            <article>
+                <h3>list-style-position</h3>
+                <div class="demo-group">
+                    <ul class="inside">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li>Inside example — marker inside content flow</li>
+                    </ul>
+                    <ul class="outside">
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        <li>Outside example — marker hangs left</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- List Style Image -->
+            <article>
+                <h3>list-style-image</h3>
+                <div class="demo-group">
+                    <ul class="image-list">
+                        <li>Custom vector marker</li>
+                        <li>Replaces standard bullet</li>
+                        <li>Scalable & retina-ready</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Shorthand -->
+            <article>
+                <h3>list-style (shorthand)</h3>
+                <div class="demo-group">
+                    <ul class="shorthand">
+                        <li>Single declaration combining:</li>
+                        <li>type + position + image</li>
+                        <li>Cleaner, maintainable code</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </main>
+
+</body>
+
+</html>

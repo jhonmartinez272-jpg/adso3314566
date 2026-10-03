@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-CSS | Cursors</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        .cursors-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        article {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #68558b;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        article:hover {
+            background: #ffffff;
+            transform: translateX(8px);
+            border-color: #cbd5e1;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        article h3 {
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            min-width: 110px;
+            margin: 0;
+            color: #1e293b;
+            letter-spacing: 0.5px;
+        }
+
+        .cursor-demo {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(145deg, #a08fc9, #8b74c9);
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            padding: 0.3rem;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            color: white;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .cursor-demo:hover {
+            transform: scale(1.08) rotate(2deg);
+            background: linear-gradient(145deg, #b09ad9, #9c86d9);
+            border-color: #94a3b8;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        /* Valores de cursor */
+        .auto { cursor: auto; }
+        .default { cursor: default; }
+        .pointer { cursor: pointer; }
+        .text { cursor: text; }
+        .wait { cursor: wait; }
+        .help { cursor: help; }
+        .crosshair { cursor: crosshair; }
+        .move { cursor: move; }
+        .not-allowed { cursor: not-allowed; }
+        .grab { cursor: grab; }
+
+        /* Header styles */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            color: #1e293b;
+        }
+
+        h2 {
+            color: #64748b;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="/03-css/index.html" class="btn-home" aria-label="Back to home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+            <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+        </svg>
+    </a>
+
+    <main>
+        <header>
+            <h1>✨ 22 - Cursors</h1>
+            <h2>🎯 Pasa el cursor sobre cada cuadro para ver el cambio</h2>
+        </header>
+
+        <section class="cursors-container">
+            <article>
+                <h3>🖱️ auto</h3>
+                <div class="cursor-demo auto">auto</div>
+            </article>
+
+            <article>
+                <h3>⬛ default</h3>
+                <div class="cursor-demo default">default</div>
+            </article>
+
+            <article>
+                <h3>👆 pointer</h3>
+                <div class="cursor-demo pointer">pointer</div>
+            </article>
+
+            <article>
+                <h3>📝 text</h3>
+                <div class="cursor-demo text">text</div>
+            </article>
+
+            <article>
+                <h3>⏳ wait</h3>
+                <div class="cursor-demo wait">wait</div>
+            </article>
+
+            <article>
+                <h3>❓ help</h3>
+                <div class="cursor-demo help">help</div>
+            </article>
+
+            <article>
+                <h3>🎯 crosshair</h3>
+                <div class="cursor-demo crosshair">crosshair</div>
+            </article>
+
+            <article>
+                <h3>🔄 move</h3>
+                <div class="cursor-demo move">move</div>
+            </article>
+
+            <article>
+                <h3>🚫 not-allowed</h3>
+                <div class="cursor-demo not-allowed">not-allowed</div>
+            </article>
+
+            <article>
+                <h3>✋ grab</h3>
+                <div class="cursor-demo grab">grab</div>
+            </article>
+        </section>
+    </main>
+
+</body>
+
+</html>
